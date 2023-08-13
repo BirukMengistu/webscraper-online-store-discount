@@ -1,13 +1,118 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: rgb(235,235,235);
+  color: rgb(50,42,51);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app{
+ width: 330px;
+ height: 960px;
+ border-radius: 50px;
+ background: radial-gradient(circle,
+  rgb(236,236,236) 0%,
+  rgb(255,255,255) 80%
+  );
+  box-shadow :rgba(0,0,0,0.1) 0 4px 12px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+header div h2{
+  margin-left: 15px;
+}
+header div p{
+  color: rgb(133,133,133);
+  padding-top:-2px;
+  margin-left: 15px;
+}
+
+.logo-container{
+height: 50px;
+position: relative;
+top: 20px;
+right: 10px;
+}
+
+.logo-container img{
+  height: 100%;
+}
+
+
+nav{
+  display: flex;
+  width: 330px;
+  overflow-x: scroll;
+  -ms-text-overflow: none;
+  scrollbar-width: none;
+}
+nav::-webkit-scrollbar{
+  display: none;
+}
+button.primary{
+  border: none;
+  background: rgb(3,140,140);
+  padding: 18px;
+  color: rgb(255,255,255);
+  font-size: 20px;
+  border-radius: 15px;
+  margin: 5px;
+}
+button.primary:disabled{
+  background-color: rgb(255,255,255);
+ color: rgb(172,172,172);
+}
+
+.card{
+  height: 100px;
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.card .img-container{
+  height: 100%;
+  width:100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card .img-container img{
+  width: 150%;
+}
+.card p{
+  font-size: 12px;
+}
+.card h5{
+  font-size: 12px;
+}
+
+.card .text-container{
+  width: 180px;
+  padding: 0 10px;
+}
+.circle {
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(3,140,140);
 }

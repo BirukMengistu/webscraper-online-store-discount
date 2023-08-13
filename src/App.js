@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React ,{useState ,useEffect} from "react";
+import Header from "./component/header";
+import Card from "./component/card";
+import Nav from './component/nav'
+
+
+
+const App =()=>{
+  const [deals , setDeals] =useState(null)
+  const URL ="http://localhost:8000/deal"
+  const fetchData = async ()=>{
+    try{
+     const response = await fetch(URL,{
+      method:"GET"
+     })
+     const tempData =  await response.json()
+      setDeals(tempData)
+    }
+    catch(err){
+     console.error(err)
+    }
+  }
+  
+  useEffect(()=>{
+    fetchData()
+  },[])
+
+   console.log(deals)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+        <Header/>
+        <Nav/>
+       
+         {deals && deals.map((item) => <Card key ={item.asin} item ={item}/>)}
     </div>
   );
 }
